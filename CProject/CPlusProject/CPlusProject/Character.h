@@ -6,16 +6,36 @@
 class Character
 {
 
+public:
+	float health;
+
 private:
 	std::string name;
-	float health;
 	CharacterClass characterClass;
+
+public:
+	Character() {
+		this->name = "Default";
+		this->characterClass = CharacterClass::Warrior;
+		this->health = 100.0f;
+	}
 
 public:
 	Character(std::string name, CharacterClass characterClass, float health) {
 		this->name = name;
 		this->characterClass = characterClass;
 		this->health = health;
+	}
+
+	void takeDamage(float damage) {
+		health -= damage;
+		if (health < 0) {
+			health = 0;
+		}
+	}
+
+	bool isDead() {
+		return health <= 0;
 	}
 
 	void displayInfo() {
