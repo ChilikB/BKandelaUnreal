@@ -124,11 +124,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CPlusProject.cpp" />
+    <ClCompile Include="Meteor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />
+    <ClInclude Include="CharacterA.h" />
     <ClInclude Include="CharacterClass.h" />
     <ClInclude Include="Utils.h" />
+    <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CPlusProject.rc" />

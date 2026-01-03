@@ -10,6 +10,9 @@
 #include <utility>
 #include <map>
 #include <vector>
+#include "Vector2.h"
+#include "CharacterA.h"
+#include "Meteor.h"
 
 Character* character = nullptr;
 
@@ -22,13 +25,15 @@ int menu();
 int menu2();
 int menu3(Character* players, int count);
 int menu4();
+int menu5();
 Character createCharacter();
 
 void main()
 {
     //while (menu());
     //while (menu2());
-	while (menu4());
+	//while (menu4());
+	while (menu5());
 }
 
 void homework2() {
@@ -175,6 +180,109 @@ void homework3Task2() {
     std::cout << "Final coordinates: (" << coords.first << ", " << coords.second << ")" << std::endl;
 
     Utils::ResetConsoleColor();
+}
+void homework4Task1() {
+
+    #pragma region Characters
+    int counter = 0;
+    std::cout << "Counter:" << std::endl;
+    std::cin >> counter;
+    if (std::cin.fail()) {
+        throw std::invalid_argument("Invalid input for counter. Please enter a valid number.");
+    }
+
+	std::vector<CharacterA> units;
+
+    std::string name = "default";
+    int health = 0;
+    Vector2 position = {0, 0};
+
+    for (int i = 0; i < counter; i++) {
+        std::cout << "Name:" << std::endl;
+        std::cin >> name;
+        std::cout << "Health:" << std::endl;
+        std::cin >> health;
+        if (std::cin.fail()) {
+            throw std::invalid_argument("Invalid input for health. Please enter a valid number.");
+        }
+        std::cout << "Position X:" << std::endl;
+        std::cin >> position.x;
+        if (std::cin.fail()) {
+            throw std::invalid_argument("Invalid input for position X. Please enter a valid number.");
+		}
+		std::cout << "Position Y:" << std::endl;
+		std::cin >> position.y;
+        if (std::cin.fail()) {
+            throw std::invalid_argument("Invalid input for position Y. Please enter a valid number.");
+		}
+		units.push_back(CharacterA(name, health, position));
+        system("cls");
+    }
+    #pragma endregion
+    
+    #pragma region Meteor
+
+    Meteor meteor;
+
+    std::cout << "Meteor strength:" << std::endl;
+    std::cin >> meteor.strength;
+    if (std::cin.fail()) {
+        throw std::invalid_argument("Invalid input for strength. Please enter a valid number.");
+    }
+
+    std::cout << "Meteor damage:" << std::endl;
+    std::cin >> meteor.damage;
+    if (std::cin.fail()) {
+        throw std::invalid_argument("Invalid input for damage. Please enter a valid number.");
+    }
+
+    std::cout << "Meteor X position:" << std::endl;
+    std::cin >> meteor.position.x;
+    if (std::cin.fail()) {
+        throw std::invalid_argument("Invalid input for meteor position X. Please enter a valid number.");
+    }
+
+    std::cout << "Meteor Y position:" << std::endl;
+    std::cin >> meteor.position.y;
+    if (std::cin.fail()) {
+        throw std::invalid_argument("Invalid input for meteor position Y. Please enter a valid number.");
+    }
+
+    system("cls");
+
+    if (units.empty()) {
+        std::cout << "No units entered." << std::endl;
+        return;
+    }
+
+    #pragma endregion
+
+    for (auto& unit : units) {
+        if (meteor.isHit(unit)) {
+            Utils::SetConsoleColor(11, 0);
+            std::cout << "--------" << std::endl;
+            std::cout << "Meteor hit character: " + unit.name << std::endl;
+            std::cout << "Applying damage: " << meteor.damage << std::endl;
+            unit.takeDamage(meteor.damage);
+            if (unit.isDead()) {
+                std::cout << "Character " + unit.name + " is dead." << std::endl;
+            }
+            else
+            {
+                std::cout << "Character " + unit.name + " survived." << std::endl;
+                std::cout << "Health left: " << unit.health << std::endl;
+
+            }
+            std::cout << "--------" << std::endl;
+        }
+        else {
+			Utils::SetConsoleColor(4, 0);
+            std::cout << "--------" << std::endl;
+            std::cout << "Meteor missed character: " + unit.name << std::endl;
+            std::cout << "--------" << std::endl;
+        }
+        Utils::ResetConsoleColor();
+    }
 }
 
 int menu() {
@@ -425,6 +533,44 @@ int menu4() {
     return 1;
 }
 
+int menu5() {
+    std::cout << "1. Task 1" << std::endl;
+    std::cout << "2. Exit" << std::endl;
+
+    int choice;
+    std::cin >> choice;
+
+    switch (choice) {
+    case 1:
+    {
+        try {
+            system("cls");
+            homework4Task1();
+        }
+        catch (std::invalid_argument& e) {
+            system("cls");
+            Utils::SetConsoleColor(4, 0);
+            std::cout << e.what() << std::endl;
+            Utils::ResetConsoleColor();
+            std::cin.clear();
+            std::cin.ignore((std::numeric_limits<std::streamsize>::max)(), '\n');
+        }
+    }
+    break;
+    case 2:
+        delete character;
+        character = nullptr;
+        return 0;
+    default:
+        system("cls");
+        Utils::SetConsoleColor(4, 0);
+        std::cout << "Invalid choice. Please select again." << std::endl;
+        Utils::ResetConsoleColor();
+        break;
+    }
+
+    return 1;
+}
 Character createCharacter() {
     std::string name;
     int classChoice;

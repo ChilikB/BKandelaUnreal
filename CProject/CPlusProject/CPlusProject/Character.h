@@ -8,9 +8,8 @@ class Character
 
 public:
 	float health;
-
-private:
 	std::string name;
+private:
 	CharacterClass characterClass;
 
 public:

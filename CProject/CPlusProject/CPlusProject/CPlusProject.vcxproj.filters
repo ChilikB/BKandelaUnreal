@@ -21,6 +21,9 @@
     <ClCompile Include="CPlusProject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Meteor.h">
+      <Filter>Source Files\Homework1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CharacterClass.h">
@@ -31,6 +34,12 @@
     </ClInclude>
     <ClInclude Include="Utils.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterA.h">
+      <Filter>Source Files\Homework1</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Source Files\Homework1</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
