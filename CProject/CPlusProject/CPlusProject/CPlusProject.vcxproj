@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -125,13 +125,19 @@
   <ItemGroup>
     <ClCompile Include="CPlusProject.cpp" />
     <ClCompile Include="Meteor.h" />
+    <ClCompile Include="PlayerCharacter.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="PlayerAttributes.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="CharacterA.h" />
     <ClInclude Include="CharacterClass.h" />
+    <ClInclude Include="PlayerCharacter.h" />
+    <ClInclude Include="PlayerStats.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Vector2.h" />
+    <ClInclude Include="WeaponStats.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CPlusProject.rc" />

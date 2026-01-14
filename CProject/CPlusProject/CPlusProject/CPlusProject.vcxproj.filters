@@ -16,6 +16,9 @@
     <Filter Include="Source Files\Homework1">
       <UniqueIdentifier>{aa82e249-3a88-49d2-b6fb-1d1d6f96faed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Homework22">
+      <UniqueIdentifier>{0a01c915-b8b6-4e81-a2fc-c01569964aaa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPlusProject.cpp">
@@ -23,6 +26,9 @@
     </ClCompile>
     <ClCompile Include="Meteor.h">
       <Filter>Source Files\Homework1</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerCharacter.cpp">
+      <Filter>Source Files\Homework22</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -40,6 +46,21 @@
     </ClInclude>
     <ClInclude Include="Vector2.h">
       <Filter>Source Files\Homework1</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerCharacter.h">
+      <Filter>Source Files\Homework22</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerStats.h">
+      <Filter>Source Files\Homework22</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAttributes.h">
+      <Filter>Source Files\Homework22</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponStats.h">
+      <Filter>Source Files\Homework22</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Source Files\Homework22</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

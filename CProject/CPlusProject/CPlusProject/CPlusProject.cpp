@@ -26,6 +26,8 @@ int menu2();
 int menu3(Character* players, int count);
 int menu4();
 int menu5();
+int menu6();
+
 Character createCharacter();
 
 void main()
@@ -33,7 +35,8 @@ void main()
     //while (menu());
     //while (menu2());
 	//while (menu4());
-	while (menu5());
+	//while (menu5());
+    while (menu6());
 }
 
 void homework2() {
@@ -181,9 +184,9 @@ void homework3Task2() {
 
     Utils::ResetConsoleColor();
 }
+
 void homework4Task1() {
 
-    #pragma region Characters
     int counter = 0;
     std::cout << "Counter:" << std::endl;
     std::cin >> counter;
@@ -218,9 +221,6 @@ void homework4Task1() {
 		units.push_back(CharacterA(name, health, position));
         system("cls");
     }
-    #pragma endregion
-    
-    #pragma region Meteor
 
     Meteor meteor;
 
@@ -254,8 +254,6 @@ void homework4Task1() {
         std::cout << "No units entered." << std::endl;
         return;
     }
-
-    #pragma endregion
 
     for (auto& unit : units) {
         if (meteor.isHit(unit)) {
@@ -533,6 +531,45 @@ int menu4() {
     return 1;
 }
 
+int menu6() {
+    std::cout << "1. Show inventory" << std::endl;
+    std::cout << "5. Exit" << std::endl;
+
+    int choice;
+    std::cin >> choice;
+
+    switch (choice) {
+    case 1:
+    {
+        try {
+            system("cls");
+            homework4Task1();
+        }
+        catch (std::invalid_argument& e) {
+            system("cls");
+            Utils::SetConsoleColor(4, 0);
+            std::cout << e.what() << std::endl;
+            Utils::ResetConsoleColor();
+            std::cin.clear();
+            std::cin.ignore((std::numeric_limits<std::streamsize>::max)(), '\n');
+        }
+    }
+    break;
+    case 5:
+        delete character;
+        character = nullptr;
+        return 0;
+    default:
+        system("cls");
+        Utils::SetConsoleColor(4, 0);
+        std::cout << "Invalid choice. Please select again." << std::endl;
+        Utils::ResetConsoleColor();
+        break;
+    }
+
+    return 1;
+}
+
 int menu5() {
     std::cout << "1. Task 1" << std::endl;
     std::cout << "2. Exit" << std::endl;
@@ -571,6 +608,7 @@ int menu5() {
 
     return 1;
 }
+
 Character createCharacter() {
     std::string name;
     int classChoice;
