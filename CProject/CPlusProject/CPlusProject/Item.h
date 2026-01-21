@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "WeaponStats.h"
 #include "PlayerStats.h"
+#include "PlayerAttributes.h"
 #include <string>
 
 class Item
@@ -35,6 +36,18 @@ class PlayerStatsModifierItem : public Item {
 		
 	public:
 		PlayerStatsModifierItem(int id, std::string name, std::string srcImage, const PlayerStats& stats) : Item(id, name, srcImage), statsModifier(stats)
+		{
+		}
+};
+
+
+class PlayerAttributeModifierItem : public Item 
+{
+	public:
+		PlayerAttributes attributesModifier;
+
+	public:
+		PlayerAttributeModifierItem(int id, std::string name, std::string srcImage, const PlayerAttributes& attributes) : Item(id, name, srcImage), attributesModifier(attributes)
 		{
 		}
 };

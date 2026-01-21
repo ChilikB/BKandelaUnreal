@@ -126,9 +126,11 @@
     <ClCompile Include="CPlusProject.cpp" />
     <ClCompile Include="Meteor.h" />
     <ClCompile Include="PlayerCharacter.cpp" />
+    <ClCompile Include="PlayerCharacterObserver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Item.h" />
+    <ClInclude Include="Observer.h" />
     <ClInclude Include="PlayerAttributes.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="CharacterA.h" />

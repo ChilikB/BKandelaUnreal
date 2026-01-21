@@ -19,6 +19,9 @@
     <Filter Include="Source Files\Homework22">
       <UniqueIdentifier>{0a01c915-b8b6-4e81-a2fc-c01569964aaa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Patterns">
+      <UniqueIdentifier>{8564bab3-ede1-4ade-9cc0-34264105755f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPlusProject.cpp">
@@ -29,6 +32,9 @@
     </ClCompile>
     <ClCompile Include="PlayerCharacter.cpp">
       <Filter>Source Files\Homework22</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerCharacterObserver.h">
+      <Filter>Source Files\Patterns</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +67,9 @@
     </ClInclude>
     <ClInclude Include="Item.h">
       <Filter>Source Files\Homework22</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>Source Files\Patterns</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
